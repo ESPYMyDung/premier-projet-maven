@@ -1,5 +1,6 @@
 package dev;
 
+import java.util.ResourceBundle;
 import com.github.lalyos.jfiglet.FigletFont;
 
 /**
@@ -13,8 +14,13 @@ public class App
         //System.out.println( "Hello World!" );
         //System.out.println(a);   
     	
-    	String asciiArt = FigletFont.convertOneLine("hello");
+    	String titre = ResourceBundle.getBundle("application").getString("titre");
+    	String asciiArt = FigletFont.convertOneLine(titre);
         System.out.println(asciiArt);
+        
+        //affichage de l'environnement
+        String environnement = ResourceBundle.getBundle("application").getString("environnement");
+        System.out.println("Environnement : " + environnement);
         
     }
 }
